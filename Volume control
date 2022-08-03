@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int T,X,Y,sub;//x is initial volume and y is final volume
+	cin>>T;
+	for (int counter=1;counter<=T;counter++){
+        cin>>X>>Y;
+		sub=X-Y;
+		cout<<abs(sub)<<endl;
+	}
+
+	return 0;
+}
