@@ -1,0 +1,27 @@
+//C++ code 
+#include <iostream>
+using namespace std;
+
+int main() {
+	int T,X,Y;
+    cin>>T;
+	for (int counter=1;counter<=T;counter++){
+        cin>>X>>Y;
+		if (X<Y)
+		{
+			cout<<"FIRST\n";
+		}
+		else if (X==Y)
+		{
+			cout<<"ANY\n";
+		}
+		else
+		{
+			cout<<"SECOND\n";
+		}
+		
+		
+    }
+    
+	return 0;
+}
