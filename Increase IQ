@@ -1,0 +1,18 @@
+//problem_id:INCRIQ
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int X,einstein_iq,chef_iq;
+	einstein_iq=170;
+	cin>>chef_iq;
+	X=chef_iq+7;
+	if (X>170){
+		cout<<"Yes\n";
+	}
+	else{
+		cout<<"No\n";
+	}
+	return 0;
+}
