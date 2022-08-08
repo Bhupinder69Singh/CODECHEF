@@ -1,0 +1,28 @@
+//problem_id:MAXTASTE
+#include <iostream>
+using namespace std;
+
+int main() {
+	int chef_dish,a,b,c,d,T,X,Y;
+	cin>>T;
+	for(int i=1;i<=T;i++){
+		cin>>a>>b>>c>>d;
+		if(a>b){
+			X=a;
+	    }
+		else{
+			X=b;
+		}
+		if(c>d){
+			Y=c;
+		}
+		else{
+			Y=d;
+		}
+		chef_dish=(X)+(Y);
+		cout<<chef_dish<<endl;
+	}
+   
+
+	return 0;
+}
