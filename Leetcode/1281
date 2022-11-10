@@ -1,0 +1,19 @@
+//1281. Subtract the Product and Sum of Digits of an Integer
+/*to get last digit from a number we use mod with 10 i.e if we want 5246 if we want last digit(6) we will mod it by 10
+and get 6*/
+#include<iostream>
+using namespace std;
+int main(){
+    int prod=1;
+    int sum=0;
+    int n;
+    cin>>n;
+    while(n!=0){
+        int digit=n%10;
+        prod=prod*digit;
+        sum=sum+digit;
+        n=n/10;
+    }
+    int op=prod-sum;
+    cout<<op;
+}
