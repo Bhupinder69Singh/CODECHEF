@@ -1,0 +1,16 @@
+class Solution {
+public:
+    int hammingWeight(uint32_t n) {
+        int count=0;
+        //the loop will run until there are 0 bits left in n
+        while(n!=0){
+            //checking last bit if it is 1 then increase the count
+            if(n&1){
+                count++;
+            }
+            //then right shift the number
+            n=n>>1;
+        }
+        return count;
+    }
+};
