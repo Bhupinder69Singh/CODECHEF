@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int T,x;
+        cin>>T;
+    for(int i=1;i<=T;i++){
+	    cin>>x;
+	    if(x<=15){
+	     cout<<"Yes"<<endl;   
+    	}
+    	else{
+    	    cout<<"No"<<endl;
+	    }
+    }
+	return 0;
+}
