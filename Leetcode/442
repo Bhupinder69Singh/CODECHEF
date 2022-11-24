@@ -1,0 +1,26 @@
+/*
+here the idea behind to solve this problem is 1) we start scanning all the elements in the array
+2) then we are given that all integers in the array are not greter than length of the array
+3)so we scan that element and move to the absolute value of that index-1 
+eg:-[4,1,2,5,4,6] 
+when we scan 4 we will move to index 1 less than 4 i.e 3
+4)Then we will negate that value value present at that index that is at index 3 we will have value present 5 so we make it
+-5 
+5)we repeat this process ,when we find again 4 in array we repeat the same and then value at that index becomes -(-5)=5
+as the value became positive we know it came twice
+6)hence it will be our answer value
+*/
+class Solution {
+public:
+    vector<int> findDuplicates(vector<int>& nums) {
+        vector<int> ans;
+        for(int i=0;i<nums.size();i++){
+            int a=abs(nums[i])-1;//going to index-1 of scanned element
+            nums[a]=(-1*nums[a]);//negating value
+            if(nums[a]>0)//checking if value is positive{
+                ans.push_back(a+1);
+            }
+        }
+        return ans;
+    }
+};
