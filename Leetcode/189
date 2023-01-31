@@ -1,0 +1,24 @@
+class Solution {
+public:
+    void rotate(vector<int>& nums, int k) {
+        vector<int> temp(nums.size());
+        for(int i=0;i<nums.size();i++){
+            temp[(i+k)%nums.size()]=nums[i];
+        }
+        nums=temp;
+    }
+};
+/*LOGIC
+here to rotate the array we used mod it helps to find the exact index of current pointed element
+in the array.
+eg: if we have a array{1,5,6,7,8} here its size is 5(no of elements) 
+if n is size then indexes are from 0 to n-1 range
+we are given k=2 i.e position by which each element is rotated forward
+when (i+k) is moded with size of array exact position is obtained
+8=n-1
+7=n-2
+6=n-3
+5=n-4
+1=n-5
+if i=3 ie 7 then as k=2 then shift will be n-1..n  
+*/
