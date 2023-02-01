@@ -1,0 +1,28 @@
+bool isPalindrome(string &s)
+{
+	// Write your code here.
+	int start=0,end=s.size()-1;
+    while(start<end){
+      if (s[start] == s[end]) {
+        start++;
+        end--;
+      }
+	   else {
+       return false;
+      }
+
+    }
+    return true;
+	
+}
+/*
+palindrome is string which when reversed it looks the same 
+eg-noon when reversed is noon so it is a palindrome
+here this question has 2 approach
+1-->we can create new array that stores reversed string and compare the reversed string and original string one by one
+2-->for in place without taking extra space we used 2 pointers(one at start & one at end)
+if the string is palindrome then its value of pointers will be same 
+eg- consider string s="noon"
+so s[start]='n'
+s[end]='n'
+*/
