@@ -1,0 +1,27 @@
+class Solution {
+public:
+    int compress(vector<char>& chars) {
+        int i=0;
+        int answer_index=0;
+        int n=chars.size();
+        while(i<n){
+            int j=i+1;
+            while(j<n && chars[i]==chars[j])//this checks if next character is same as current character
+            {
+                j++;
+            }
+            //we come here only after vector is traversed or we found a new character
+            chars[answer_index++]=chars[i];//this stores the old character
+            int count=j-i;
+            if (count > 1){
+                string cnt=to_string(count);
+                for (char ch:cnt){
+                chars[answer_index++]=ch;
+            }
+        }
+        i=j;//going to next character
+        
+    }
+    return answer_index;
+}
+};
