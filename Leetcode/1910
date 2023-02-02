@@ -1,0 +1,13 @@
+class Solution {
+public:
+    string removeOccurrences(string s, string part) {
+        while(s.length() !=0 && s.find(part)<s.length()){
+            s.erase(s.find(part),part.length());
+        }
+        return s;
+    }
+    
+};
+//LOGIC---->here we are given a string and a pattern (part) we have to erase that part in string 
+//we used s.find() it finds the first occurence of mentioned string i.e index at which pattern is present
+//s.erase() has 2 parameter start and end i.e delete from where to where
