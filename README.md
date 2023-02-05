@@ -1,2 +1,2 @@
 # CODECHEF
-C++/Python solutions to code chef problems
+C++/Python solutions to code chef,leetcod,codingninjas problem problems
