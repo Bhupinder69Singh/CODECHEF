@@ -1,0 +1,26 @@
+//2D ARRAYS
+#include <bits/stdc++.h> 
+vector<int> wavePrint(vector<vector<int>> arr, int nRows, int mCols)
+{
+    vector<int> ans;
+    for(int col=0;col<mCols;col++){
+        if (col%2 == 0)//check if col is even or odd
+        {
+            //TOP TO BOTTOM
+             for(int row=0;row<nRows;row++){
+                ans.push_back(arr[row][col]);
+                }
+            
+        }
+        else{
+                //BOTTOM TO UP
+                for(int row=nRows-1;row>=0;row--){
+                ans.push_back(arr[row][col]);
+                }
+        }
+}
+    return ans;
+}
+/*LOGIC--->we here know for even column no. we go top to bottom
+and for odd column no. bottom to top
+*/
