@@ -1,0 +1,19 @@
+class Solution {
+public:
+    void rotate(vector<vector<int>>& matrix) {
+        //Here we are given matrix is n*n i.e number rows=number of columns
+        /*to rotate 90 degree we will first do reverse of current matrix and then transpose it*/
+        int rows=matrix.size();//size function return no of rows 
+        int cols=rows;
+        reverse(matrix.begin(),matrix.end());
+        for(int i=0;i<rows;++i)//this loop will traverse each element in row 
+        //as we want to transpose we do not need 0,0 element of matrix thats why we used ++i
+        {
+            for(int j=i;j<rows;++j){
+                swap(matrix[i][j],matrix[j][i]);//transpose
+            }
+        }
+       
+    }
+
+};
