@@ -1,0 +1,48 @@
+class Solution {
+public:
+    vector<int> spiralOrder(vector<vector<int>>& matrix) {
+        vector<int> ans;
+        int row=matrix.size();//no of rows in matrix
+        int col=matrix[0].size();//no of colums in matrix
+        //initializing indexes
+        int startingRow=0;
+        int startingColumn=0;
+        int endingRow=row-1;
+        int endingColumn=col-1;
+        /*we will keep a count that will increment each time element is printed to keep track of total no. of elements*/
+        int count=0;
+        int total=row*col;
+        while(count<total)//this loop will run until all elements are traversed
+        {
+            //starting row
+            for(int i=startingColumn;count<total && i<=endingColumn;i++){
+                ans.push_back(matrix[startingRow][i]);
+                count++;
+            }
+            startingRow++;
+
+            //ending column
+            for(int i=startingRow;count<total && i<=endingRow;i++){
+                ans.push_back(matrix[i][endingColumn]);
+                count++;
+            }
+            endingColumn--;
+            
+            //ending row
+            for(int i=endingColumn;count<total && i>=startingColumn;i--){
+                ans.push_back(matrix[endingRow][i]);
+                count++;
+            }
+            endingRow--;
+
+            //starting column
+             for(int i=endingRow;count<total && i>=startingRow;i--){
+                ans.push_back(matrix[i][startingColumn]);
+                count++;
+            }
+            startingColumn++;
+        }
+        return ans;
+    }
+};
+//LOGIC-->Firstrow print karayenge fir last column,fir last row.fir first column
