@@ -1,0 +1,15 @@
+#include <bits/stdc++.h> 
+#include <bits/stdc++.h> 
+int modularExponentiation(int x, int n, int m) {
+	// Write your code here.
+	int res=1;
+	while(n>0){
+		if(n&1){
+			res=(1LL*res*(x)%m)%m;/*here we multiplied by LL(long long)because int is of range(10^9=32bits)nut if we multiplied two such int it will be oustide 
+      the range of integer i. [(10^9) * (10^9)]=10^18 so we typecasted it*/
+		}
+		x=(1LL*(x)%m*(x)%m)%m;
+		n=n>>1;//here we used right shift which means divide by 2
+	}
+	return res;
+}
