@@ -1,0 +1,36 @@
+//Without converting to string 
+/*in this we compare the first and last digit of given integer 
+eg-if number is 1234 to find first digit we know dividing it by 1000 will give the 1st digit
+similary if number is 123 we will divide it by 100 to get first digit
+Now to find appropriate divisor we will use a while loop to determine 
+To get the last digit we just need to mod by 10 in the above eg-(1234 % 10)=4,(123 % 10)=3*/
+class Solution {
+public:
+    bool isPalindrome(int x) {
+    //we first check if number is positive or negative because negative numbers are never palindrome.
+    if (x<0){
+        return false;
+    }
+    //initially the divisor is kept 1;
+    int divide_by=1;
+    while(x/divide_by >=10 ){
+        divide_by *=10;
+    }
+    // we will run a loop until the integer is not zero
+    while(x !=0){
+        int first_digit=x/divide_by;//initially 1234/1000=1
+        int last_digit=x%10;//1234%10=4
+        //compare
+        if(first_digit != last_digit){
+            return false;
+        }
+        //now we need to remove the first and last digit i.e 1234 we need to remove1,4
+        x=(x%divide_by)/10;
+        //now as 2 digits are removed we also need to reduce divide_by by 100 to get first and last
+        divide_by = divide_by/100;
+    }
+    return true;
+    }
+};
+
+//COMPLEXITY-->O(n)
