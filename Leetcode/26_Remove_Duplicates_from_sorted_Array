@@ -13,3 +13,21 @@ public:
     return ans;
     }
 };
+
+
+//Optimised Code
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+    int insert_at=1;
+    //traversing the array
+    for(int i=1;i<nums.size();i++){
+        if (nums[i-1] != nums[i]){
+            //found unique new element 
+            nums[insert_at]=nums[i];
+            insert_at++;
+        }
+    }
+    return insert_at;//how many times new unique element is found
+    }
+};
