@@ -1,0 +1,43 @@
+Intuitions
+The Problem just want to remove the target value given(val) from a given vector(nums).Also it should be done in-place without using extra space.
+
+Approach
+In my approach as I only knew how to use pop_back function we have a loop that will traverse all the elements of the vector and move the target val to last part of array.
+
+Code
+class Solution {
+public:
+    int removeElement(vector<int>& nums, int val) {
+    //final answer vector
+     vector<int> ans;
+    //traversing all elements of vector
+    for(int i=0;i<nums.size();i++){
+        int j=nums.size()-1;//pointing to last element
+        if(nums[i]==val)//if current element is our target value
+        {
+            while(j>=i)//this loop will swap the current target element to last part
+            {
+                //checking if last element is same as target 
+                //if not then swap else move pointer j back
+                if (nums[i]!=nums[j]){
+                swap(nums[i],nums[j]);
+                break;
+                }
+                else{
+                j--;
+                }
+            }
+            }
+        }
+    for(int i:nums)//this loops runs and removes occurences of target
+{
+        if(i==val){
+            nums.pop_back();
+        }
+        else{
+            ans.push_back(i);
+        }
+    }
+    return ans.size();
+    }
+};
