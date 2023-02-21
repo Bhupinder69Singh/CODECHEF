@@ -1,0 +1,32 @@
+class Solution {
+public:
+    vector<int> plusOne(vector<int>& v) {
+    vector<int> ans;
+    int carry=0;
+    int digit=1;
+    int last=v.size()-1;
+   //traversing each element startin from last index 
+    for(int j=last;j>=0;j--){
+        int sum=v[j]+digit+carry;//sum at each index/position
+        if(sum>=10)//carry generated
+        {
+            sum -=10;
+            carry=1;
+            digit=0;//so that it doesnt get add again
+            ans.push_back(sum);
+        }
+        else{
+            carry=0;
+            digit=0;
+            ans.push_back(sum);
+        }
+        if (j==0 && carry==1)//if its the last element and still there is a carry
+//eg. [9,9,9]+1 =1000 we are at 0th index and we still have carry 
+        {
+            ans.push_back(carry);
+        }
+    }
+    reverse(ans.begin(),ans.end());
+    return ans;
+    }
+};
