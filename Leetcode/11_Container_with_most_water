@@ -1,0 +1,29 @@
+//Logic is we use a two pointer approach
+//as we know height of container will be the smallest of two compared pointers if both pointers are of different heights
+class Solution {
+public:
+    int maxArea(vector<int>& height) {
+        int max_area=0;
+        int start=0;//first element
+        int end=height.size()-1;//last elment
+        while(start<end)//if start=end then container area will be 0 so loop runs until start is less than end
+        {
+           int length=end-start;//Length of container
+            int breadth=min(height[start],height[end]);//height of container will be min of both 
+            int current_area=length*breadth;
+            if(current_area > max_area){
+                max_area=current_area;
+            }
+            if(height[start]<height[end]){
+             //if start height is less than the we move start pointer because we need more area 
+             start++;
+            }
+            else{
+                end--;
+                
+            }
+            
+        }
+        return max_area;
+    }
+};
