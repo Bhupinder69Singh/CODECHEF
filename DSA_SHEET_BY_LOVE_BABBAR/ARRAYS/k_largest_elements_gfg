@@ -1,0 +1,12 @@
+class Solution{
+public:	
+	vector<int> kLargest(int arr[], int n, int k) {
+	    // code here
+	    //Sorting the array in descending order
+	   vector<int> ans;
+	   sort(arr,arr+n,greater<int>());
+	    for(int j=0;j<k;j++){
+	        ans.push_back(arr[j]);
+	    }
+	    return ans;
+	}
