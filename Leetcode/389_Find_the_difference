@@ -1,0 +1,16 @@
+//this is basic approach here we sort both the strings and loop through s string and compare each element in s with element in t if we found the different element
+//then it is returned else it is the last element present in t which is different
+class Solution {
+public:
+    char findTheDifference(string s, string t) {
+        int string_length=s.length();
+        sort(s.begin(),s.end());
+        sort(t.begin(),t.end());
+        for(int i=0;i<string_length;i++){
+            if(s[i] != t[i]){
+                return t[i];
+            }
+        }
+        return t[string_length];
+    }
+};
