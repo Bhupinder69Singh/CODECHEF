@@ -1,0 +1,20 @@
+/*
+The Idea is pretty simple as we know that range of numbers is from 1 to N-1 
+so we loop through element at each index and compare it i.e element at 0th index should be 1,at 1st Index 2 and so on.....
+So when we find a number which does not match this means element of that index is missing;
+*/
+class Solution{
+  public:
+    int MissingNumber(vector<int>& array, int n) {
+        // Your code goes here
+        sort(array.begin(),array.end());
+        for(int i=1;i<n;i++){
+            if(i == array[i-1]){
+                continue;
+            }
+            else{
+                return i;
+            }
+        }
+    }
+};
