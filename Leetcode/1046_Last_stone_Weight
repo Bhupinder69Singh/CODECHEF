@@ -1,0 +1,37 @@
+/*Approach
+here we use a while loop that iterates until n>=0 which is the length of the array.
+When we enter the loop we sort the given array in increasing order.
+We then know that last two elments will be the highest elements;
+So we will use x which will be second-last/second-highest element
+ans y will be last/highest element.
+We will use these x and y values for comparison and find answer.*/
+class Solution {
+public:
+    int lastStoneWeight(vector<int>& stones) {
+        int ans=0;
+        int n=stones.size();
+        while(n>=0){
+        sort(stones.begin(),stones.end());
+        int x=n-2;//Second last element
+        int y=n-1;//last
+         if(x==-1)//this checks if array contains only 1 element
+            {
+                ans=stones[y];
+                break;
+            }
+            else if(x==y)/*if both values are same then both 
+                            will be destroyed and no result is stored*/ 
+            {
+                stones.pop_back();
+                stones.pop_back();
+            }
+            else{
+                //storing the value after smashing at x position and removing y element 
+                stones[x]=(stones[y]-stones[x]);  
+                stones.pop_back();
+            }
+            n--;
+        }
+        return ans;
+    }
+};
