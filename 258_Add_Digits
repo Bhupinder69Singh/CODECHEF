@@ -1,0 +1,10 @@
+class Solution {
+public:
+    int addDigits(int num) {
+       //this checks if single digit is remaining
+       if(num<=9){
+           return num;
+       }
+       return addDigits(num%10 + addDigits(num/10));
+    }
+};
