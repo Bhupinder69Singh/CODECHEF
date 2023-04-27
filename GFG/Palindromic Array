@@ -1,0 +1,29 @@
+#include<vector>
+class Solution {
+public:
+    int PalinArray(int a[], int n)
+    {
+    	// code here
+        for(int i=0;i<n;i++){
+            int current=a[i];//this our integer at ith index in array
+            vector<int> num;//we create a vector to compare the digit using 2 pointers
+            while(current>0){
+                //we loop through the each digit of our current integer and push it into num array
+                int digit=current%10;
+                num.push_back(digit);
+                current=current/10;
+            }
+            //this checks if current integer is palindromic or not 
+             int start=0;
+             int end=num.size()-1;
+             while(start<=end){
+                 if(num[start]!=num[end]){
+                    return 0;
+                 }
+                 start++;
+                 end--;
+            }
+        }
+        return 1;
+    }
+};
