@@ -1,0 +1,17 @@
+//We will sort the array in ascending order which will give us min and max index 
+//min value  will be at index 0 & mac value will be at last index after sorting 
+//then we loop excluding that indexes.
+class Solution {
+public:
+    double average(vector<int>& salary) {
+        sort(salary.begin(),salary.end());
+        double sum=0;
+        double count=0;
+        for(int i=1;i<salary.size()-1;i++){
+            sum +=salary[i];
+            count++;
+        }
+        double avg_sal=sum/count;
+        return avg_sal;
+    }
+};
