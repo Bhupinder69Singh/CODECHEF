@@ -1,0 +1,7 @@
+int strstr(string s, string x)
+{
+     //Your code here
+    int op=s.find(x);
+    return op;
+    
+}
